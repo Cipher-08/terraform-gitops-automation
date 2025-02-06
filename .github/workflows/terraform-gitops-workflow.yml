@@ -41,6 +41,5 @@ jobs:
         run: terraform plan -var="s3_bucket_name=gitops-automation-bucket"
 
       - name: Terraform Apply
-        if: github.event_name == 'push'
         working-directory: infrastructure
-        run: terraform apply -auto-approve -var="s3_bucket_name=gitops-automation-bucket"
+        run: terraform plan -var="s3_bucket_name=gitops-automation-bucket"
